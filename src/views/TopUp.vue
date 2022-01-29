@@ -63,6 +63,10 @@ export default {
         type: this.selectedPaymentMethod
       })
 
+      alert(`Successful Top Up!
+Method: ${this.selectedPaymentMethod}
+Amount: ${this.amount}€`)
+
       this.amount = ''
       this.selectedPaymentMethod = ''
     }
