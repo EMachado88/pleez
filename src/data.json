@@ -1,0 +1,24 @@
+{
+   "account": {
+       "balance": 20,
+       "name": "João",
+       "card": {
+            "number": "4242 4242 4242 4242",
+            "expireDate": "05/24",
+            "ccv": "999"
+       },
+       "phone": "999888999"
+   },
+   "paymentMethods": [
+       {
+           "type": "Stripe",
+           "label": "Credit/debit card",
+           "image": "https://i.imgur.com/rLoYmTx.png"
+       },
+       {
+           "type": "MBway",
+           "label": "MBway",
+           "image": "https://i.imgur.com/BZduAi0.png"
+       }
+   ]
+}
