@@ -99,7 +99,7 @@ export default {
 
 .btn-payment.selected {
   border-color: #000;
-  background-color: #000;
+  background-color: #F4C935;
   color: #fff;
 }
 
