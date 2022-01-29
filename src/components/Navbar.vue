@@ -1,5 +1,5 @@
 <template>
-  <navbar>
+  <nav>
     <router-link to="/top-up">
       <img src="../assets/topup.png" alt="Top up">
       <p>
@@ -12,12 +12,12 @@
         Account
       </p>
     </router-link>
-  </navbar>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Navbar',
   props: {
     msg: String
   }
@@ -25,14 +25,14 @@ export default {
 </script>
 
 <style>
-navbar {
+nav {
   display: flex;
   justify-content: space-between;
   height: 76px;
   background-color: #fff;
 }
 
-navbar > a {
+nav > a {
   width: 50%;
   display: flex;
   flex-direction: column;
