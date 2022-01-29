@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home container">
     <div class="header">
       <img src="../assets/banana-cafe.png" alt="Banana Cafe">
     </div>

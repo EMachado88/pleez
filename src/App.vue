@@ -41,6 +41,19 @@ body {
   font-size: 24px;
 }
 
+input {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
 .btn {
   background-color: #000;
   border-color: #000;
@@ -54,6 +67,12 @@ body {
   margin-bottom: 15px;
 }
 
+.btn-reverse {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #000;
+}
+
 .btn:hover {
   background-color: #fff;
   border-color: #000;
@@ -64,11 +83,17 @@ body {
   display: block;
 }
 
+
 main {
   height: calc(100vh - 76px);
   overflow: auto;
-  max-width: 340px;
   width: 100%;
+  margin: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 340px;
   margin: auto;
 }
 </style>
