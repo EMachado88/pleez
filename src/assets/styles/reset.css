@@ -26,3 +26,7 @@ button,
 [type="submit"] {
   -webkit-appearance: button;
 }
+
+p {
+  font-size: inherit;
+}

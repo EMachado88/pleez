@@ -2,13 +2,13 @@
   <nav>
     <router-link to="/top-up">
       <img src="../assets/topup.png" alt="Top up">
-      <p>
+      <p class="navbar-text">
         Top up
       </p>
     </router-link>
     <router-link to="/account">
       <img src="../assets/account.png" alt="Account">
-      <p>
+      <p class="navbar-text">
         Account
       </p>
     </router-link>
@@ -41,7 +41,7 @@ nav > a {
   text-decoration: none;
 }
 
-p {
+.navbar-text {
   margin: 0;
   font-size: 12px;
 }

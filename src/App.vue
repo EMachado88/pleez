@@ -38,6 +38,7 @@ body {
   width: 100vw;
   justify-content: space-between;
   background-color: #F4C935;
+  font-size: 24px;
 }
 
 .btn {
