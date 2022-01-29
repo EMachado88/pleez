@@ -1,17 +1,17 @@
 <template>
   <navbar>
-    <div>
+    <router-link to="/top-up">
       <img src="../assets/topup.png" alt="Top up">
       <p>
         Top up
       </p>
-    </div>
-    <div>
+    </router-link>
+    <router-link to="/account">
       <img src="../assets/account.png" alt="Account">
       <p>
         Account
       </p>
-    </div>
+    </router-link>
   </navbar>
 </template>
 
@@ -32,12 +32,13 @@ navbar {
   background-color: #fff;
 }
 
-navbar > div {
+navbar > a {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 p {

@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <main>
-      <div class="header">
-        <img src="./assets/banana-cafe.png" alt="Banana Cafe">
-      </div>
-
-      <button class="w-100">Account</button>
-      <button class="w-100">Top Up</button>
+      <router-view />
     </main>
     <Navbar msg="Welcome to Your Vue.js App"/>
   </div>
@@ -45,7 +40,7 @@ body {
   background-color: #F4C935;
 }
 
-button {
+.btn {
   background-color: #000;
   border-color: #000;
   color: #fff;
@@ -53,13 +48,19 @@ button {
   font-size: 24px;
   padding: 20px;
   text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
   margin-bottom: 15px;
 }
 
-button:hover {
+.btn:hover {
   background-color: #fff;
   border-color: #000;
   color: #000;
+}
+
+.btn.full-width {
+  display: block;
 }
 
 main {
@@ -68,11 +69,5 @@ main {
   max-width: 340px;
   width: 100%;
   margin: auto;
-}
-
-.header {
-  text-align: center;
-  margin-top: 80px;
-  margin-bottom: 160px;
 }
 </style>
