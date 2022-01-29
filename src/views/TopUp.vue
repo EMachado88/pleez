@@ -19,13 +19,19 @@
         v-for="(paymentMethod, index) in paymentMethods"
         :key="index"
         class="btn btn-reverse btn-payment full-width"
+        :class="{ 'selected': selectedPaymentMethod ===  paymentMethod.type}"
+        @click="selectPaymentMethod(paymentMethod.type)"
       >
         <img :src="paymentMethod.image" :alt="paymentMethod.label">
         {{ paymentMethod.label }}
       </a>
 
-      <a class="btn full-width">
-        Pay
+      <a
+        v-if="amount && selectedPaymentMethod"
+        class="btn full-width"
+        @click="topUp()"
+      >
+        Pay {{ amount }}€
       </a>
     </div>
   </div>
@@ -34,15 +40,23 @@
 <script>
 import data from '../data.json'
 
-console.log(data)
-
 export default {
   name: 'TopUp',
   data() {
     return {
       name: data.account.name,
       amount: '',
-      paymentMethods: data.paymentMethods
+      selectedPaymentMethod: '',
+      paymentMethods: data.paymentMethods,
+    }
+  },
+  methods: {
+    selectPaymentMethod(type) {
+      this.selectedPaymentMethod = type
+    },
+    topUp() {
+      this.amount = ''
+      this.selectedPaymentMethod = ''
     }
   }
 }
@@ -63,9 +77,10 @@ export default {
   background-color: rgba(242, 242, 242, 0.71);
   padding: 15px;
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 
-.payment-method .btn-payment {
+.btn-payment {
   border-color: #000;
   text-transform: initial;
   font-size: 16px;
@@ -74,7 +89,13 @@ export default {
   border-radius: 20px;
 }
 
-.payment-method .btn-payment img {
+.btn-payment.selected {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-payment img {
   width: 38px;
   margin-right: 15px;
 }
