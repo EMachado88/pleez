@@ -2,15 +2,15 @@
   <navbar>
     <div>
       <img src="../assets/topup.png" alt="Top up">
-      <h6>
+      <p>
         Top up
-      </h6>
+      </p>
     </div>
     <div>
       <img src="../assets/account.png" alt="Account">
-      <h6>
+      <p>
         Account
-      </h6>
+      </p>
     </div>
   </navbar>
 </template>
@@ -29,6 +29,7 @@ navbar {
   display: flex;
   justify-content: space-between;
   height: 76px;
+  background-color: #fff;
 }
 
 navbar > div {
@@ -39,7 +40,8 @@ navbar > div {
   align-items: center;
 }
 
-h6 {
+p {
   margin: 0;
+  font-size: 12px;
 }
 </style>
