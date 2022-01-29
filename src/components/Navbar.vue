@@ -1,10 +1,16 @@
 <template>
   <navbar>
     <div>
-      Top up
+      <img src="../assets/topup.png" alt="Top up">
+      <h6>
+        Top up
+      </h6>
     </div>
     <div>
-      Account
+      <img src="../assets/account.png" alt="Account">
+      <h6>
+        Account
+      </h6>
     </div>
   </navbar>
 </template>
@@ -28,7 +34,12 @@ navbar {
 navbar > div {
   width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h6 {
+  margin: 0;
 }
 </style>
