@@ -1,7 +1,7 @@
 <template>
   <div class="top-up">
     <div class="header container">
-      <p class="white">Hello {{ name }}!</p>
+      <p class="white">Hello {{ account.name }}!</p>
     </div>
 
     <div class="sub-header container">
@@ -38,16 +38,17 @@
 </template>
 
 <script>
-import data from '../data.json'
-
 export default {
   name: 'TopUp',
+  props: {
+    account: Object,
+    paymentMethods: Array,
+    topUps: Array
+  },
   data() {
     return {
-      name: data.account.name,
       amount: '',
-      selectedPaymentMethod: '',
-      paymentMethods: data.paymentMethods,
+      selectedPaymentMethod: ''
     }
   },
   methods: {
@@ -55,6 +56,13 @@ export default {
       this.selectedPaymentMethod = type
     },
     topUp() {
+      this.account.balance += parseFloat(this.amount)
+      this.topUps.push({
+        date: new Date(),
+        value: this.amount,
+        type: this.selectedPaymentMethod
+      })
+
       this.amount = ''
       this.selectedPaymentMethod = ''
     }

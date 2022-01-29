@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main>
-      <router-view />
+      <router-view :account="account" :paymentMethods="paymentMethods" :topUps="topUps" />
     </main>
     <Navbar msg="Welcome to Your Vue.js App"/>
   </div>
@@ -10,10 +10,19 @@
 <script>
 import Navbar from './components/Navbar.vue'
 
+import data from './data.json'
+
 export default {
   name: 'App',
   components: {
     Navbar
+  },
+  data() {
+    return {
+      account: data.account,
+      paymentMethods: data.paymentMethods,
+      topUps: []
+    }
   }
 }
 </script>

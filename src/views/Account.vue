@@ -1,7 +1,7 @@
 <template>
   <div class="account">
     <div class="header container">
-      <p class="white">Hello {{ name }}!</p>
+      <p class="white">Hello {{ account.name }}!</p>
     </div>
 
     <div class="sub-header container">
@@ -10,11 +10,11 @@
 
     <div class="container">
       <a class="btn btn-reverse full-width">
-        {{ balance }}€
+        {{ account.balance }}€
       </a>
     </div>
 
-    <div class="container">
+    <div class="top-ups container">
       <h4>Past Top Ups</h4>
 
       <table>
@@ -22,34 +22,24 @@
           <td>Date</td>
           <td>Value</td>
         </tr>
+
+        <tr v-for="(topUp, index) in topUps" :key="index">
+          <td>{{ topUp.date.toLocaleDateString() }}</td>
+          <td>{{ topUp.value }}€</td>
+        </tr>
       </table>
 
-      <p class="text-center">No past top ups</p>
+      <p v-if="!topUps.length" class="text-center">No past top ups</p>
     </div>
   </div>
 </template>
 
 <script>
-import data from '../data.json'
-
 export default {
   name: 'Account',
-  data() {
-    return {
-      name: data.account.name,
-      balance: data.account.balance,
-      selectedPaymentMethod: '',
-      paymentMethods: data.paymentMethods,
-    }
-  },
-  methods: {
-    selectPaymentMethod(type) {
-      this.selectedPaymentMethod = type
-    },
-    topUp() {
-      this.amount = ''
-      this.selectedPaymentMethod = ''
-    }
+  props: {
+    account: Object,
+    topUps: Array
   }
 }
 </script>
@@ -57,6 +47,15 @@ export default {
 <style scoped>
 .header {
   margin-top: 115px;
+}
+
+.sub-header {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.top-ups {
+  margin-top: 100px;
 }
 
 table {
