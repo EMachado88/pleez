@@ -17,17 +17,7 @@
     <div class="top-ups container">
       <h4>Past Top Ups</h4>
 
-      <table>
-        <tr>
-          <td>Date</td>
-          <td>Value</td>
-        </tr>
-
-        <tr v-for="(topUp, index) in topUps" :key="index">
-          <td>{{ topUp.date.toLocaleDateString() }}</td>
-          <td>{{ topUp.value }}€</td>
-        </tr>
-      </table>
+      <TopUpsTable :topUps="topUps" />
 
       <p v-if="!topUps.length" class="text-center">No past top ups</p>
     </div>
@@ -35,11 +25,16 @@
 </template>
 
 <script>
+import TopUpsTable from '../components/TopUpsTable.vue'
+
 export default {
   name: 'Account',
   props: {
     account: Object,
     topUps: Array
+  },
+  components: {
+    TopUpsTable
   }
 }
 </script>
